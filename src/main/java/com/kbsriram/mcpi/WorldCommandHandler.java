@@ -34,6 +34,27 @@ public class WorldCommandHandler
             return String.valueOf(Block.getIdFromBlock(b));
         }
     }
+    
+    public final static class GetBlockWithData
+	    implements ICommandHandler
+	{
+	    public String handle(Command cmd, WorldServer ws)
+	        throws Exception
+	    {
+	        if (cmd.getArgs().length != 3) {
+	            return "usage: world.getBlockWithData(x,y,z)";
+	        }
+	        WorldInfo info = ws.getWorldInfo();
+	
+	        String[] args = cmd.getArgs();
+	        int x = Util.asX(info, args[0]);
+	        int y = Util.asY(info, args[1]);
+	        int z = Util.asZ(info, args[2]);
+	        Block b = ws.getBlock(x, y, z);
+	        int data = ws.getBlockMetadata(x, y, z);
+	        return String.valueOf(Block.getIdFromBlock(b) + "," + data);
+	    }
+	}
 
     public final static class GetHeight
         implements ICommandHandler

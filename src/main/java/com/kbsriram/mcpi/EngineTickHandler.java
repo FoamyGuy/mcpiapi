@@ -78,6 +78,7 @@ public class EngineTickHandler
         s_handlers.put("world.setTileEntityHex", new WorldCommandHandler.SetTileEntityHex());
         s_handlers.put("world.getHeight", new WorldCommandHandler.GetHeight());
         s_handlers.put("world.getBlock", new WorldCommandHandler.GetBlock());
+        s_handlers.put("world.getBlockWithData", new WorldCommandHandler.GetBlockWithData());
         s_handlers.put("world.getPlayerIds", new WorldCommandHandler.GetPlayerIds());
         s_handlers.put("world.setting", new WorldCommandHandler.Setting());
 
